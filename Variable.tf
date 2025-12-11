@@ -28,9 +28,5 @@ variable "keypair_name" {
   default     = "LambdaEc2Keypair"
 }
 
-variable "public_key_path" {
-  description = "Path to your local SSH public key"
-  type        = string
-  default     = "~/.ssh/id_rsa.pub"
-}
+
 
