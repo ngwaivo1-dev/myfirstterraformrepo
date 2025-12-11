@@ -1,11 +1,36 @@
-variable "aws_access_key" {
-  description = "AWS Access Key"
+variable "aws_region" {
+  description = "AWS region where resources will be created"
   type        = string
-  sensitive   = true
+  default     = "eu-central-1"
 }
 
-variable "aws_secret_key" {
-  description = "AWS Secret Key"
+variable "instance_ami" {
+  description = "AMI ID for the EC2 instance"
   type        = string
-  sensitive   = true
+  default     = "ami-015f3aa67b494b27e" 
 }
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
+  type        = string
+  default     = "Mynewlyec2"
+}
+
+variable "keypair_name" {
+  description = "Name to assign to the AWS key pair"
+  type        = string
+  default     = "LambdaEc2Keypair"
+}
+
+variable "public_key_path" {
+  description = "Path to your local SSH public key"
+  type        = string
+  default     = "~/.ssh/id_rsa.pub"
+}
+
